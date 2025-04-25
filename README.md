@@ -23,10 +23,9 @@ It uses **LangChain**, **FAISS**, **HuggingFace Embeddings**, and **Ollama’s L
 7. [API Endpoints](#api-endpoints)
 8. [Examples](#examples)
 9. [Troubleshooting & FAQs](#troubleshooting--faqs)
-10. [Roadmap](#roadmap)
-11. [Contributing](#contributing)
-12. [License](#license)
-13. [Acknowledgments](#acknowledgments)
+10. [Contributing](#contributing)
+11. [License](#license)
+12. [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -201,15 +200,6 @@ Required Skills: Python, TensorFlow
 
 ---
 
-## Roadmap
-
-- [ ] Add **Docker** support with `docker-compose` for easy deployment.
-- [ ] Integrate **user authentication** and **profiles**.
-- [ ] Migrate from Excel to a **database** (e.g., MongoDB or PostgreSQL).
-- [ ] Implement **chat history** and **context retention**.
-- [ ] Add **filter** and **sorting** options in the UI.
-
----
 
 ## Contributing
 
