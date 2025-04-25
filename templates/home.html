@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome - Academic, Internship & Project Assistant Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Academic, Internship & Project Assistant Chatbot</h1>
+        <p class="subtitle">
+          Your AI companion for a smarter learning and career journey.
+        </p>
+      </div>
+      <div class="hero-image-box">
+        <img
+          src="{{ url_for('static', filename='hello.jpg') }}"
+          alt="Chatbot"
+          class="hero-image"
+        />
+      </div>
+    </div>
+    <main>
+      <section class="content">
+        <h2>About Your AI Assistant</h2>
+        <p>
+          Discover tailored recommendations for courses, skills, internships,
+          and projects—crafted just for you based on your interests, skills, and
+          goals.
+        </p>
+        <div class="features">
+          <div class="feature-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Purpose</h3>
+            <p>
+              Simplify your academic and career path with AI-driven insights.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-star"></i>
+            <h3>Features</h3>
+            <p>Personalized suggestions powered by advanced language models.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-cogs"></i>
+            <h3>How It Works</h3>
+            <p>Input your details and get curated results instantly.</p>
+          </div>
+        </div>
+        <div class="project-details">
+          <h2>Project Details</h2>
+          <div class="details-grid">
+            <div class="detail-item">
+              <h3><i class="fas fa-brain"></i> AI Technology</h3>
+              <p>Leverages state-of-the-art natural language processing.</p>
+            </div>
+            <div class="detail-item">
+              <h3><i class="fas fa-user-graduate"></i> Target Audience</h3>
+              <p>Students, graduates, and early-career professionals.</p>
+            </div>
+            <div class="detail-item">
+              <h3><i class="fas fa-lightbulb"></i> Unique Value</h3>
+              <p>Combines planning, matching, and inspiration in one.</p>
+            </div>
+            <div class="detail-item">
+              <h3><i class="fas fa-clock"></i> Development</h3>
+              <p>Built over 6 months with a team of 4.</p>
+            </div>
+          </div>
+        </div>
+        <a href="/chatbot" class="button"
+          >Explore Your Path<i class="fas fa-rocket"></i
+        ></a>
+      </section>
+    </main>
+    <footer>
+      <p>Built with ❤️ by our team - 2025</p>
+    </footer>
+  </body>
+</html>

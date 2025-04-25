@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot - Academic, Internship & Project Assistant</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Discover Your Learning, Internship & Project Path</h1>
+        <p class="subtitle">
+          Let’s craft your personalized journey with AI-driven insights!
+        </p>
+      </div>
+      <div class="hero-image-box">
+        <img
+          src="{{ url_for('static', filename='chatbot.png') }}"
+          alt="Chatbot"
+          class="hero-image"
+        />
+      </div>
+    </div>
+    <main>
+      <div class="form-container">
+        <form action="/query" method="post">
+          <!-- Accordion for Form Sections -->
+          <div class="accordion">
+            <!-- About You -->
+            <div class="form-section">
+              <input
+                type="checkbox"
+                id="about-you-toggle"
+                class="accordion-toggle"
+                checked
+              />
+              <label for="about-you-toggle" class="accordion-header">
+                <h2><i class="fas fa-user"></i> About You</h2>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </label>
+              <div class="accordion-content">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g., John Doe"
+                />
+
+                <label for="interest"
+                  >Interests <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="interest"
+                  name="interest"
+                  placeholder="e.g., Python, Data Science"
+                  required
+                />
+
+                <label for="skills"
+                  >Current Skills <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="skills"
+                  name="skills"
+                  placeholder="e.g., HTML, CSS, JavaScript"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Your Preferences -->
+            <div class="form-section">
+              <input
+                type="checkbox"
+                id="preferences-toggle"
+                class="accordion-toggle"
+              />
+              <label for="preferences-toggle" class="accordion-header">
+                <h2><i class="fas fa-cog"></i> Your Preferences</h2>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </label>
+              <div class="accordion-content">
+                <label for="experience">Experience Level</label>
+                <select id="experience" name="experience">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+
+                <label for="learning_style">Learning Style</label>
+                <select id="learning_style" name="learning_style">
+                  <option value="Visual">Visual</option>
+                  <option value="Auditory">Auditory</option>
+                  <option value="Hands-on">Hands-on</option>
+                </select>
+
+                <label for="study_time">Study Time per Week</label>
+                <input
+                  type="text"
+                  id="study_time"
+                  name="study_time"
+                  placeholder="e.g., 5-10 hours"
+                />
+              </div>
+            </div>
+
+            <!-- Internship Preferences -->
+            <div class="form-section">
+              <input
+                type="checkbox"
+                id="internship-toggle"
+                class="accordion-toggle"
+              />
+              <label for="internship-toggle" class="accordion-header">
+                <h2><i class="fas fa-briefcase"></i> Internship Preferences</h2>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </label>
+              <div class="accordion-content">
+                <label for="internship_location">Preferred Location</label>
+                <input
+                  type="text"
+                  id="internship_location"
+                  name="internship_location"
+                  placeholder="e.g., New York, Remote"
+                />
+
+                <label for="internship_start_date">Preferred Start Date</label>
+                <input
+                  type="text"
+                  id="internship_start_date"
+                  name="internship_start_date"
+                  placeholder="e.g., 2025-06-01"
+                />
+
+                <label for="internship_duration">Preferred Duration</label>
+                <input
+                  type="text"
+                  id="internship_duration"
+                  name="internship_duration"
+                  placeholder="e.g., 3 months"
+                />
+
+                <label for="stipend_expectation">Stipend Expectation</label>
+                <input
+                  type="text"
+                  id="stipend_expectation"
+                  name="stipend_expectation"
+                  placeholder="e.g., $1000/month"
+                />
+              </div>
+            </div>
+
+            <!-- Project Preferences -->
+            <div class="form-section">
+              <input
+                type="checkbox"
+                id="project-toggle"
+                class="accordion-toggle"
+              />
+              <label for="project-toggle" class="accordion-header">
+                <h2><i class="fas fa-tools"></i> Project Preferences</h2>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </label>
+              <div class="accordion-content">
+                <label for="project_area">Preferred Project Area</label>
+                <input
+                  type="text"
+                  id="project_area"
+                  name="project_area"
+                  placeholder="e.g., Web Development, AI"
+                />
+
+                <label for="project_complexity">Desired Complexity</label>
+                <select id="project_complexity" name="project_complexity">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+
+                <label for="project_extra">Additional Info</label>
+                <textarea
+                  id="project_extra"
+                  name="project_extra"
+                  placeholder="e.g., Prefer team projects"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Anything Else -->
+            <div class="form-section">
+              <input
+                type="checkbox"
+                id="extra-toggle"
+                class="accordion-toggle"
+              />
+              <label for="extra-toggle" class="accordion-header">
+                <h2><i class="fas fa-sticky-note"></i> Anything Else?</h2>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </label>
+              <div class="accordion-content">
+                <label for="extra_info">Additional Information</label>
+                <textarea
+                  id="extra_info"
+                  name="extra_info"
+                  placeholder="e.g., Looking for remote options"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Recommendation Categories -->
+            <div class="form-section checkbox-section">
+              <input
+                type="checkbox"
+                id="categories-toggle"
+                class="accordion-toggle"
+                checked
+              />
+              <label for="categories-toggle" class="accordion-header">
+                <h2><i class="fas fa-list"></i> Recommendation Categories</h2>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+              </label>
+              <div class="accordion-content">
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="courses"
+                      name="categories"
+                      value="courses"
+                    />
+                    Courses
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="skills"
+                      name="categories"
+                      value="skills"
+                    />
+                    Skills
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="studymaterials"
+                      name="categories"
+                      value="studymaterials"
+                    />
+                    Study Materials
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="internships"
+                      name="categories"
+                      value="internships"
+                    />
+                    Internships
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="projects"
+                      name="categories"
+                      value="projects"
+                    />
+                    Projects
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="button">
+            Get Your Recommendations <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+      </div>
+    </main>
+  </body>
+</html>
